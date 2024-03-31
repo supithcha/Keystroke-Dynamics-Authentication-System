@@ -1,0 +1,685 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+header {
+  background-color: none;
+  color: black;
+  padding: 35px;
+}
+.invalidlogin{
+  color: red;
+  display: block;
+  margin-top: 350px;
+  text-align: center;
+}
+
+
+nav {
+  display: flex;
+  flex-direction: row;
+  background-color: #A2ADAF;
+  position: relative;
+  margin: 0 auto;
+  padding: 9px;
+  justify-content: space-evenly;
+}
+
+nav a {
+  display: block;
+  color: white;
+  font-weight: 550;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #3A3D32;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #3A3D32;
+}
+
+.user img {
+  margin-left: 10px;
+  border-radius: 50%;
+  /*make pic be a circle*/
+}
+
+/* --------------------------signup.html-------------------------*/
+
+.body {
+  margin-top: 50px;
+  /*center*/
+  display: flex;
+  /*make block center*/
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: #3A3D32;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+
+h3 {
+  text-align: center;
+}
+
+.content form .userinform {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 20px;
+}
+
+form .userinform .inputbox {
+  margin-bottom: 15px;
+  width: 45%;
+  /* space between block */
+}
+
+h5 {
+  margin-bottom: 6px;
+}
+
+.userinform .inputbox input {
+  height: 10px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  /* border text*/
+}
+
+.content form .password {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 20px;
+}
+
+.password .inputbox input {
+  height: 10px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  /* border text*/
+}
+
+form .password .inputbox {
+  margin-bottom: 15px;
+  width: 45%;
+}
+
+/*register bottom*/
+form .button {
+  height: 40px;
+  margin: 35px
+    /* button size*/
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  color: white;
+  border: none;
+  /* no border */
+  font-weight: 600;
+  font-size: 17px;
+  background-color: #D1964c;
+}
+
+form .button :hover {
+  color: #666666;
+  background-color: #A2ADAF;
+}
+
+
+/* --------------------------login.html-------------------------*/
+
+.margin {
+  padding: 20px;
+}
+
+.center {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+}
+
+.margin h3{
+  color: white;
+  margin-top: 50%;
+}
+
+.center h1 {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #3A3D32;
+  margin-bottom: 20px;
+}
+
+h5 {
+  margin-bottom: 6px;
+}
+
+.center form {
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.txt2 {
+  margin-bottom: 20px;
+}
+
+/* sign up*/
+.signup {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 13px;
+  color: #666666;
+}
+
+.signup a {
+  color: green;
+  text-decoration: none;
+}
+
+.signup a:hover {
+  text-decoration: underline;
+  /* sign up underline*/
+  color: #988E7D;
+}
+
+/* border text*/
+.inform .txt1 input {
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  /* border color and size*/
+  margin-bottom: 15px;
+  /* seperate between username and password*/
+}
+
+.inform .txt2 input {
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  /* border color and size*/
+}
+
+/*login bottom*/
+form .login {
+  height: 40px;
+  margin: 35px
+    /* button size*/
+}
+
+form .login input {
+  height: 100%;
+  width: 100%;
+  color: white;
+  border: none;
+  /* no border */
+  font-weight: 600;
+  font-size: 17px;
+  background-color: #D1964c;
+}
+
+form .login :hover {
+  color: #666666;
+  background-color: #A2ADAF;
+}
+
+/*header*/
+.Home {
+  margin-top: -10px;
+  /* full header */
+  float: left;
+  /* make it be left */
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.Home a {
+  color: #3A3D32;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+
+
+/* --------------------------usermanage.html-------------------------*/
+
+.textcenter {
+  padding: 30px;
+}
+
+.editor {
+  text-align: right;
+}
+
+.right {
+  /* edit delete */
+  text-align: right;
+}
+
+.sameline {
+  display: flex;
+  flex-direction: row;
+}
+
+h4 {
+  margin-top: 20px;
+}
+
+.roundborderbox {
+  /* This class used by article to create block of the navigate(e.g. All, Northern, Northeast, etc)  for search and seach criteria(e.g. Round Trip, Departure station, Terminal station, etc) */
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 25px;
+  background-color: #e5e1db;
+  width: 70%;
+  margin: auto;
+  color: black;
+}
+
+.navbar {
+  /* Style the navigation bar for navigate of search (e.g. find user)*/
+  padding: 6px;
+  text-align: center;
+  width: 100%;
+  overflow: auto;
+}
+
+.navbar a {
+  /* Navbar links */
+  width: 17%;
+  float: left;
+  padding: 12px;
+  color: black;
+  text-decoration: none;
+}
+
+hr.solid {
+  /* horizontal line */
+  border-top: 1px solid #3A3D32;
+}
+
+.inline {
+  /* used by each <div> in search block to keep all element stay inline */
+  display: inline-block;
+}
+.searchtitle{
+  text-align: center;
+  margin: 50px;
+  color: white;
+}
+.bg { /* The backgroung image used is located in google drive, so I use url to access and use the image */
+  background-image: url("https://i.pinimg.com/564x/c6/62/1d/c6621df459a3f674c6766623fcb74141.jpg");
+  background-size: cover;
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  position: relative;
+  z-index: 1;
+}
+.rcorners {
+  /* used by select box and date box to make it round */
+  border-radius: 25px;
+  border: 1px solid #3A3D32;
+  padding: 8px;
+  margin: 5px;
+  min-width: 200px;
+}
+
+.searchbutton {
+  /* decorate the search button */
+  border-radius: 25px;
+  border: 1px solid #3A3D32;
+  padding: 8px;
+  margin: 5px;
+}
+
+.searchbutton:hover {
+  /* decorate the search button when mouse over*/
+  background-color: #3A3D32;
+  color: white;
+}
+.column { /* used by each ticket block  */
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+  background-color: #e5e1db;
+}
+.dummy_box { /* made inside the ticket box have an inside box area for the details of each ticket*/
+  margin: auto;
+  padding: 8px;
+  width: 100%;
+  height: 140px;
+  border-radius: 15px;
+  background-color: #e5e1db;
+  margin-bottom: 20px;
+}
+.noresult{
+  text-align: center;
+  color: white;
+}
+
+
+.user {
+  /* user name */
+  width: 80%;
+  margin-left: 130px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background: white;
+  color: #D1964c;
+  margin-bottom: 23px;
+}
+
+h4 {
+  padding-left: 10px;
+}
+
+.Addaccount {
+  justify-content: center;
+  /* make text center */
+  text-align: center;
+}
+
+button.edit {
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #669999;
+}
+
+button.edit a {
+  color: white;
+  text-decoration-line: none;
+  /* no underline */
+  font-size: 13px;
+}
+
+button.edit :hover {
+  text-decoration-line: underline;
+  /* underline */
+  color: #3A3D32;
+}
+
+button.delete {
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #669999;
+}
+
+button.delete a {
+  color: white;
+  text-decoration-line: none;
+  /* no underline */
+  font-size: 13px;
+}
+
+button.delete :hover {
+  text-decoration-line: underline;
+  /* underline */
+  color: #3A3D32;
+}
+
+button.Add {
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #D1964c;
+}
+
+button.Add a {
+  color: white;
+  text-decoration-line: none;
+  /* no underline */
+  font-size: 13px;
+}
+
+button.Add :hover {
+  text-decoration-line: underline;
+  /* underline */
+  color: #D1964c;
+}
+
+.right button:hover {
+  background: #D1964c;
+  /* change background when hover */
+}
+
+.Addaccount button:hover {
+  background: #666666;
+  /* change background when hover */
+}
+
+
+
+/* media query in CSS that targets devices with a maximum width of 768 pixels. */
+@media only screen and (max-width: 431px) {
+
+  /* reset styles for certain elements */
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    padding: 20px;
+  }
+
+  /* ... (adjust styles for other elements as needed) ... */
+
+  /* make modifications to certain blocks */
+  .container {
+    max-width: 100%;
+  }
+
+  .user img {
+    margin-left: 0;
+    /* Adjust the margin for the user image */
+  }
+
+  /* ... (adjust styles for other elements as needed) ... */
+}
+
+/* -------------------------search--------------------------*/
+#search-form{
+  text-align: center;
+}
+
+.search-result {/* hide search result section by default */
+  display: none;
+}
+.headforsearchresult { /* area for text "Search Result" */
+  text-align: center;
+  padding: 10px;
+  font-size:larger;
+  background-color: #8fa7ab;
+  color: white;
+}
+.column { /* used by each ticket block  */
+  padding: 10px;
+  margin: 30px;
+  margin-bottom: 80px;
+  border-radius: 20px;
+  border: 1px solid #3A3d32;
+}
+.dummy_box { /* made inside the ticket box have an inside box area for the details of each ticket*/
+  margin: auto;
+  margin-top: 10px;
+  width: 100%;
+  height: 140px;
+  border-radius: 15px;
+  background-color: #e5e1db;
+  margin-bottom: 20px;
+}
+.dummy_text { /* Used for decorate text inside the ticket box (e.g. Departure and Terminal station and date of each ticket) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  padding-top: 0%;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+
+.des-info{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: start;
+  padding-left: 0%;
+  padding-right: 50px;
+}
+
+.des-info2{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: start;
+  padding-left: 0%;
+  padding-right: 90px;
+  padding-top: 20px;
+}
+.contain_row { /* container of the detail inside the ticket box */
+  display: flex;
+  flex-direction: row;
+  background-color: #e5e1db;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 9px;
+  justify-content: space-evenly;
+}
+.row { /* each detail inside the dummy_box has div into flex. This class use to decorate it to look more balance */
+  padding: 10px;
+  margin: 30px;
+  color: white;
+  color: #3A3D32;
+  text-align: center;
+  font-size:medium;
+}
+ #editbox { /* use for decorate the edit button in search page in order to edit each ticket*/
+  color: #3A3D32;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 34px;
+  border: 1px solid #3A3D32;
+}
+#editbox:hover { /* edit button for each ticket when mouse over */
+  background-color: #d1964c;
+  color: white
+}
+.readmoredetail {/* used to decorate the Read more detail button that links to the detail of each ticket */
+  float: right;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  background-color: #3A3D32;
+  padding: 7px;
+  border-radius: 20px;
+  /* border: 1px solid #3A3d32; */
+}
+.readmoredetail:hover { /* Read more detail button when mouse over */
+  background-color: #d1964c;
+}
+
+/* --------------------------welcome.html-------------------------*/
+header{
+  background-color: none;
+}
+
+.background{
+	background: url(https://drive.google.com/uc?id=1LiKD7XV-GA6-tJbLeUIiT2Jxvj_Rtwqf) no-repeat;
+	background-size: cover;
+	height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Home i{
+  color: white;
+}
+
+.welcome h2{
+  color: rgb(255, 255, 255);
+  font-weight: 1000;
+  font-size: 55px;
+  margin-top: 10%;
+  justify-content:center; /* make text center */
+  text-align:center;
+}
+
+.welcome h3{
+  color: white;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.bblock{
+  display: flex;
+  flex-direction: column;
+  justify-content:center; /* make text center */
+  align-items: center;
+  margin-top: 20px;
+}
+
+.block{
+  padding: 10px 30px;
+  border: white solid 1px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 17px;
+  background: black;
+  margin-bottom: 20px;
+}
+
+.block a{
+  color: white;
+  text-decoration-line: none; /* no underline */
+  font-size: 13px;
+  font-weight: bolder;
+}
+
+.block a:hover{
+  color:wheat;
+  text-decoration-line: underline; /* underline */
+  font-size: 13px;
+}
+
+.bblock button:hover{
+  background:  #D1964c; /* hover background */
+}

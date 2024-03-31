@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Keystroke</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="Mainpage.css" type="text/css" />     
+        
+        
+    </head>
+    <body>
+        <header>
+            <h1>Register Page</h1>
+            <button id = "toggle">Toggle</button>
+        </header>
+        <form class= "login">
+            <h1>Register</h1>
+            <input type="text" placeholder="Insert your username here" id="kuser">      
+            <input type="password" placeholder="Insert your password here" id="kpass">
+            <input type="button" value="Register" onclick="Submit()" id="submit">
+        </form>
+        <div id = "CPMData">
+            <p>
+                <span class="label">CPM_User</span>
+                <span id="CPM_User">0</span>
+            </p>
+            <p>
+                <span class="label">CPM_Pass</span>
+                <span id="CPM_Pass">0</span>
+            </p>
+        </div>
+    </body>
+        <script>
+            kuser.onkeydown = kuser.onkeyup = KeyEventlistener_User;
+            kuser.onkeypress = checkCPM_Username;
+            
+            kpass.onkeydown = kpass.onkeyup = KeyEventlistener_Pass;
+            kpass.onkeypress = checkCPM_Password;
+            
+            var iLastTime = 0;
+            var iTime = 0;
+            var iTotal = 0;
+            var iKeys = 0;
+            var CurrentCPM = 0;
+            var avg_CPM_user = 0;
+            var avg_CPM_pass = 0;
+            var UD_user = [];
+            var UD_pass = [];
+            var DU_user = [];
+            var DU_pass = [];
+            var DD_user = [];
+            var DD_pass = [];
+            var DUTime = 0;
+            var DULastTime = 0;
+            var UDTime = 0;
+            var UDLastTime = 0;
+            
+        //Send the eventlistener into each function
+        function KeyEventlistener_User(e) {
+            checkDownUpKeyEvent(e, "user");
+            checkUpDownKeyEvent(e, "user");
+        }
+        function KeyEventlistener_Pass(e) {
+            checkDownUpKeyEvent(e, "pass");
+            checkUpDownKeyEvent(e, "pass");
+        }
+        
+        
+        // Down-Up (Finding the duration that user press on each key)
+        function checkDownUpKeyEvent(e, input_method) {
+            if (input_method == "user") {
+                if (document.getElementById('kuser').value.length == 0) {
+                    DU_user = [];
+                    DUTime = new Date().getTime();
+                }
+            } else {
+                if (document.getElementById('kpass').value.length == 0) {
+                    DU_pass = [];
+                    DUTime = new Date().getTime();
+                }
+            }
+            if (e.type == "keydown") {
+                DUTime = new Date().getTime();
+            }
+            if (e.type == "keyup") {
+                DULastTime = new Date().getTime();
+                if (input_method == "user") {
+                    if (DUTime == 0) {
+                        DU_user.push(0);
+                    } else {
+                        DU_user.push(DULastTime - DUTime);
+                        console.log("DULastTime: " + (DULastTime - DUTime))
+                    }
+                } else {
+                    if (DUTime == 0) {
+                        DU_pass.push(0);
+                    } else {
+                        DU_pass.push(DULastTime - DUTime);
+                        console.log("DULastTime: " + (DULastTime - DUTime))
+                    }
+                }
+            }
+            if (e.keyCode == "8") { // Can use only backspace button
+                //Check that there is removed in the input text (for backspace button)
+                var currentLength = 0;
+                if (input_method == "user") {
+                    currentLength = document.getElementById('kuser').value.length;
+                    if (DU_user.length != 0) {
+                        DU_user.pop();
+                    }
+                } else {
+                    currentLength = document.getElementById('kpass').value.length;
+                    if (DU_pass.length != 0) {
+                        DU_pass.pop();
+                    }
+                }
+            }
+        }
+        //Up-Down (Check the duration that user take from changing one key into another key) 
+        function checkUpDownKeyEvent(e, input_method) {
+        
+            if (input_method == "user") {
+                if (document.getElementById('kuser').value.length == 0) {
+                    UD_user = [];
+                    UDTime = new Date().getTime();
+                }
+            } else {
+                if (document.getElementById('kpass').value.length == 0) {
+                    UD_pass = [];
+                    UDTime = new Date().getTime();
+                }
+            }
+            //Check the duration between each key
+            if (e.type == "keyup") {
+                UDTime = new Date().getTime();
+                console.log("UDTime: " + UDTime)
+                console.log("A")
+            }
+            if (e.type == "keydown") {
+                UDLastTime = new Date().getTime();
+                console.log("B")
+                if (input_method == "user") {
+                    if (UDTime == 0) {
+                        UD_user.push(0);
+                    } else {
+                        UD_user.push(UDLastTime - UDTime);
+                        console.log("UDLastTime: " + (UDLastTime - UDTime))
+                    }
+                } else {
+                    if (UDTime == 0) {
+                        UD_pass.push(0);
+                    } else {
+                        UD_pass.push(UDLastTime - UDTime);
+                        console.log("UDLastTime: " + (UDLastTime - UDTime))
+                    }
+                }
+            }
+            
+            if (e.keyCode == "8") { // Can use only backspace button
+                //Check that there is removed in the input text (for delete button)
+                var currentLength = 0;
+                if (input_method == "user") {
+                    currentLength = document.getElementById('kuser').value.length;
+                    if (UD_user.length != 0) {
+                        UD_user.pop();
+                    }
+                } else {
+                    currentLength = document.getElementById('kpass').value.length;
+                    if (UD_pass.length != 0) {
+                        UD_pass.pop();
+                    }
+                }
+            }
+        }
+
+        //Check CPM
+        function checkCPM_Username(e) {
+            checkCPM("user");
+        }
+        function checkCPM_Password(e) {
+            checkCPM("pass");
+        }
+        //Check the keystoke per minute
+        function checkCPM(input_method) {
+            iTime = new Date().getTime();
+            if (input_method == "user") {
+                if (document.getElementById('kuser').value.length == 0) {
+                    avg_CPM_user = 0;
+                    $('#CPM_User').html(avg_CPM_user);
+                    iLastTime = iTime;
+                }
+            } else {
+                if (document.getElementById('kpass').value.length == 0) {
+                    avg_CPM_pass = 0;
+                    $('#CPM_Pass').html(avg_CPM_pass);
+                    iLastTime = iTime;
+                }
+            }
+            if (iLastTime != 0) {
+                iKeys++;
+                iTotal += iTime - iLastTime;
+                CurrentCPM = Math.round(iKeys / iTotal * 6000, 2);
+                if (input_method == "user") {
+                    avg_CPM_user = Math.round(iKeys / iTotal * 6000, 2);
+                    if (avg_CPM_user == Infinity){
+                        avg_CPM_user = 0;
+                    }
+                    $('#CPM_User').html(avg_CPM_user);
+                } else {
+                    avg_CPM_pass = Math.round(iKeys / iTotal * 6000, 2);
+                    if (avg_CPM_pass == Infinity){
+                        avg_CPM_pass = 0;
+                    }
+                    $('#CPM_Pass').html(avg_CPM_pass);
+                }
+            }
+            iLastTime = iTime;
+        }
+            
+            function Submit(){
+                console.log("UD_User" + UD_user);
+                console.log("DU_User" + DU_user);
+                console.log("UD_Pass" + UD_pass);
+                console.log("DU_Pass" + DU_pass);
+                console.log("UD_User_avg" + calAvg(UD_user));
+                console.log("DU_User_avg" + calAvg(DU_user));
+                console.log("UD_Pass_avg" + calAvg(UD_pass));
+                console.log("DU_Pass_avg" + calAvg(DU_pass));
+                //Check that there is password or not
+                if (document.getElementById('kpass').value.length != 0 && document.getElementById('kpass').value.length != 0){
+                    var xhr = new XMLHttpRequest();
+                    var data = {
+                        avg_CPM_user: avg_CPM_user,
+                        avg_UD_user: calAvg(UD_user),
+                        avg_DU_user: calAvg(DU_pass),
+                        avg_CPM_pass: avg_CPM_pass,
+                        avg_UD_pass: calAvg(UD_pass),
+                        avg_DU_pass: calAvg(DU_pass),
+                        username: document.getElementById('kuser').value,
+                        password: document.getElementById('kpass').value
+                    }
+                    xhr.open ('POST', '/register_data');
+                    console.log(document.getElementById('kuser').value)
+                    xhr.onload = function(data){
+                        console.log('data loaded', this.responseText);
+                    };
+                    xhr.setRequestHeader('Content-Type','application/json');
+                    xhr.send(JSON.stringify(data));
+                    location.reload()
+                }else{
+                    alert('You didn\'t insert the username or password <Or Both?>');
+                    //refresh the webpage
+                    location.reload()
+                }
+            }
+            
+            function calAvg(listdata){
+                var result = 0;
+                var length = listdata.length;
+                for (var i = 0;i < length; i++){
+                    result = result + listdata[i];
+                }
+                result = result/length;
+                return result;
+            }
+            document.getElementById("toggle").onclick = function() {
+                if (document.getElementById("CPMData").style.display == "block"){
+                    document.getElementById("CPMData").style.display = "none"
+                }else{
+                    document.getElementById("CPMData").style.display = "block"
+                }
+            }
+        </script>
+    </body>
+</html>

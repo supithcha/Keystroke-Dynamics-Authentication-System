@@ -26,13 +26,15 @@ router.get('/welcome', (req, res) => {
     res.sendFile(path.join(`${__dirname}/html/welcome.html`))
 });
 
+app.listen(port, function () {
+    console.log(`Server listening on port: ${port}`)
+});
+
 router.use((req, res, next) => {
     res.status(404)
     console.log("404: Invalid accessed")
 })
-app.listen(port, function () {
-    console.log(`Server listening on port: ${port}`)
-});
+
 
 
 

@@ -1,4 +1,3 @@
-
 function addUser(){
 	let username = document.getElementById("username").value;
 	let password = document.getElementById("password").value;
@@ -131,3 +130,4 @@ function calculateTotalDownUpTime(keystrokes) {
     }
     return totalDownUpTime;
 }
+

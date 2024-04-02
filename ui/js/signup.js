@@ -52,7 +52,7 @@ function addUser(){
 				alert("Add User success");
                 console.log(data);
                 keystrokes = [];
-				// window.location.reload();
+				window.location.reload();
 			} else {
 				alert("Error!! Please try again");
 			}
@@ -130,4 +130,3 @@ function calculateTotalDownUpTime(keystrokes) {
     }
     return totalDownUpTime;
 }
-

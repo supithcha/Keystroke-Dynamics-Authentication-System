@@ -17,6 +17,6 @@ CREATE TABLE user_account (
 
 INSERT INTO user_account (username, password, img_link) 
 VALUES 
-    ('Supithcha', 'u6488045', 'https://drive.google.com/file/d/1Cjm2BQt0uXh3Hu2nc4ZpAlYN5gqkl9zm/view?usp=drive_link'),
-    ('Sasasuang', 'u6488052', 'https://drive.google.com/file/d/1Cjm2BQt0uXh3Hu2nc4ZpAlYN5gqkl9zm/view?usp=drive_link'),
-    ('Nisakorn', 'u6488226', 'https://drive.google.com/file/d/1Cjm2BQt0uXh3Hu2nc4ZpAlYN5gqkl9zm/view?usp=drive_link');
+    ('Supithcha', 'Supithcha6488045', 'https://drive.google.com/file/d/1Cjm2BQt0uXh3Hu2nc4ZpAlYN5gqkl9zm/view?usp=drive_link'),
+    ('Sasasuang', 'Sasasuang6488052', 'https://drive.google.com/file/d/1Cjm2BQt0uXh3Hu2nc4ZpAlYN5gqkl9zm/view?usp=drive_link'),
+    ('Nisakorn', 'Nisakorn6488226', 'https://drive.google.com/file/d/1Cjm2BQt0uXh3Hu2nc4ZpAlYN5gqkl9zm/view?usp=drive_link');

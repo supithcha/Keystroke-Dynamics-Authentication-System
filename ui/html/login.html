@@ -3,14 +3,21 @@
 <header>
   <link rel="stylesheet" href="login.css">
   <script src="https://kit.fontawesome.com/7ac9749b66.js" crossorigin="anonymous"></script>
+  <img src="https://www.ict.mahidol.ac.th/wp-content/uploads/2021/04/logoict.png" alt="logo" class="logo">
+  <div class ="nav-button">
+    <button class="block"><a href="/signup">Signup</a></i> </button>
+    <button class="block"><a href="/login">Login</a></i> </button>
+  </div>
+  
   <script src="/js/authen.js" defer></script>
-  <script src="/js/login.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </header>
 
 <body>
+  <h1 style="text-align: center; margin-top: 105px; color: white;">Welcome :)</h1>
+  <p style="text-align: center; font-weight: 100; margin-top: 8px; color: white; font-style: italic;">Enter your credential to login</p>
   <div class="margin">
-    <div class="center">
+    <div class="center" style="margin-top: 5%;">
       <h1>Login</h1>
       <form class="logincheck" .id="login-input" action="javascript:login()">
         <div class="inform">
@@ -27,14 +34,13 @@
           </div>
         </div>
       </form>
-      <div id="averages"></div>
       <section>
         <div id="invalid_login"> </div>
       </section>
     </div>
-    <button class="block"><a href="/signup">Signup</a></i> </button>
-    <button onclick="logout()">Logout</button>
+    
   </div>
 </body>
 
 </html>
+
